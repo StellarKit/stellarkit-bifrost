@@ -6,7 +6,7 @@ RUN /apk-build
 
 # deploy bifrost binary
 RUN mkdir -p /go/src/github.com/stellar/ \
-    && git clone https://github.com/stellar/go.git /go/src/github.com/stellar/go \
+    && git clone --depth 1 --branch master https://github.com/stellar/go.git /go/src/github.com/stellar/go \
     && cd /go/src/github.com/stellar/go \
     && curl https://glide.sh/get | sh \
     && glide install \
