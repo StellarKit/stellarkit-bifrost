@@ -3,7 +3,7 @@ db:
     container_name: postgres
     restart: unless-stopped
     volumes:
-      - /home/steve/bifrost-testnet/postgresql:/var/lib/postgresql/data
+      - ~/bifrost-testnet/postgresql:/var/lib/postgresql/data
     environment:
       POSTGRES_USER: bifrost
       POSTGRES_PASSWORD: password
@@ -14,7 +14,7 @@ bifrost:
     image: sgehrman/stellar-bifrost
     container_name: stellar-bifrost
     volumes:
-      - /home/steve/bifrost-testnet:/opt/bifrost
+      - ~/bifrost-testnet:/opt/bifrost
     restart: unless-stopped
     environment:
       MASTER_PUBLIC_KEY: "xpub6C79eBsW2XQbzfXFsRv51Lac6Ckx5nyqf9cUmFr1fuAEHGXmpq8oPNMqCpH1jTdwP3s5SD644R8KK4cVytk9Jxcxcb7JsfNxcGNRbG5q4pq"
@@ -33,6 +33,6 @@ bifrost:
       BIFROST_STELLAR_HORIZON: "http://localhost:8000"
       NETWORK_PASSPHRASE: "Test SDF Network ; September 2015"
       BIFROST_DB_TYPE: "postgres"
-      BIFROST_DB_DSN: "postgres://bifrost:password@localhost:15432/postgres?sslmode=disable"
+      BIFROST_DB_DSN: "postgres://bifrost:password@db:15432?sslmode=disable"
     ports:
       - "8800:8000/tcp"
