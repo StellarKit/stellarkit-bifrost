@@ -8,7 +8,7 @@ db:
       POSTGRES_USER: bifrost
       POSTGRES_PASSWORD: password
     ports:
-      - "5432:5432/tcp"
+      - "15432:5432/tcp"
 
 bifrost:
     image: sgehrman/stellar-bifrost
@@ -33,6 +33,6 @@ bifrost:
       BIFROST_STELLAR_HORIZON: "http://localhost:8000"
       NETWORK_PASSPHRASE: "Test SDF Network ; September 2015"
       BIFROST_DB_TYPE: "postgres"
-      BIFROST_DB_DSN: "postgres://bifrost:password@localhost?sslmode=disable"
+      BIFROST_DB_DSN: "postgres://bifrost:password@localhost:15432?sslmode=disable"
     ports:
       - "8800:8000/tcp"
