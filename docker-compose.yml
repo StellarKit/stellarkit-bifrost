@@ -33,4 +33,4 @@ bifrost:
       BIFROST_DB_TYPE: "postgres"
       BIFROST_DB_DSN: "postgres://bifrost:password@localhost:8000?sslmode=disable"
     ports:
-      - "8000:8000/tcp"
+      - "8800:8000/tcp"
