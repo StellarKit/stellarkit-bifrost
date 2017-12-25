@@ -14,7 +14,7 @@ bifrost:
     image: sgehrman/stellar-bifrost
     container_name: stellar-bifrost
     volumes:
-      - ~/bifrost-testnet:/opt/bifrost
+      - /home/steve/bifrost-testnet:/opt/bifrost
     restart: unless-stopped
     environment:
       MASTER_PUBLIC_KEY: "xpub6C79eBsW2XQbzfXFsRv51Lac6Ckx5nyqf9cUmFr1fuAEHGXmpq8oPNMqCpH1jTdwP3s5SD644R8KK4cVytk9Jxcxcb7JsfNxcGNRbG5q4pq"
