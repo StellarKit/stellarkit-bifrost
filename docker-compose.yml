@@ -3,7 +3,7 @@ db:
     container_name: postgres
     restart: unless-stopped
     volumes:
-      - ~/bifrost-testnet/postgresql:/var/lib/postgresql/data
+      - /home/steve/bifrost-testnet/postgresql:/var/lib/postgresql/data
     environment:
       POSTGRES_USER: bifrost
       POSTGRES_PASSWORD: password
