@@ -2,7 +2,7 @@ version: "2"
 services:
   database:
       image: postgres
-      container_name: postgres
+      container_name: postgres-bifrost
       restart: unless-stopped
       volumes:
         - ~/bifrost-testnet/postgresql:/var/lib/postgresql/data
