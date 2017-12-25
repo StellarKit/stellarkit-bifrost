@@ -2,6 +2,7 @@ version: "2"
 services:
   database:
       image: postgres
+      container_name: postgres-bifrost
       restart: unless-stopped
       volumes:
         - ~/bifrost-testnet/postgresql:/var/lib/postgresql/data
@@ -35,6 +36,6 @@ services:
         BIFROST_STELLAR_HORIZON: "http://localhost:8000"
         NETWORK_PASSPHRASE: "Test SDF Network ; September 2015"
         BIFROST_DB_TYPE: "postgres"
-        BIFROST_DB_DSN: "database://bifrost:password@database/bifrostdb?sslmode=disable"
+        BIFROST_DB_DSN: "postgres://bifrost:password@localhost:15432/bifrostdb?sslmode=disable"
       ports:
         - "8800:8000/tcp"
