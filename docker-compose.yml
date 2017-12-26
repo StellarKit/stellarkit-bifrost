@@ -36,4 +36,4 @@ services:
         BIFROST_DB_TYPE: "postgres"
         BIFROST_DB_DSN: "postgres://bifrost:password@database/bifrostdb?sslmode=disable"
       ports:
-        - "8800:8000/tcp"
+        - "8800:8800/tcp"
