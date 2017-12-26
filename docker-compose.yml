@@ -20,8 +20,8 @@ services:
       environment:
         MASTER_PUBLIC_KEY: "xpub6C79eBsW2XQbzfXFsRv51Lac6Ckx5nyqf9cUmFr1fuAEHGXmpq8oPNMqCpH1jTdwP3s5SD644R8KK4cVytk9Jxcxcb7JsfNxcGNRbG5q4pq"
         BIFROST_BITCOIN_RPC_SERVER: "localhost:18332"
-        RPC_USER: user
-        RPC_PASS: password
+        RPC_USER: "user"
+        RPC_PASS: "password"
         TESTNET: "true"
         MINIMUM_VALUE_BTC:  "0.00001"
         BIFROST_ETHEREUM_RPC_SERVER: "localhost:8545"
