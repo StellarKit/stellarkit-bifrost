@@ -6,6 +6,8 @@ services:
       restart: unless-stopped
       volumes:
         - ~/bifrost-testnet/postgresql:/var/lib/postgresql/data
+      networks:
+        - backend
       environment:
         POSTGRES_USER: bifrost
         POSTGRES_PASSWORD: password
