@@ -31,4 +31,4 @@ RUN /apk-server
 
 ENTRYPOINT ["/entry.sh"]
 
-EXPOSE 8000
+EXPOSE 8800
