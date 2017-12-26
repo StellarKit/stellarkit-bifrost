@@ -6,8 +6,6 @@ services:
       restart: unless-stopped
       volumes:
         - ~/bifrost-testnet/postgresql:/var/lib/postgresql/data
-      networks:
-        - backend
       environment:
         POSTGRES_USER: bifrost
         POSTGRES_PASSWORD: password
@@ -19,8 +17,6 @@ services:
       volumes:
         - ~/bifrost-testnet:/opt/bifrost
       restart: unless-stopped
-      networks:
-        - backend
       environment:
         MASTER_PUBLIC_KEY: "xpub6C79eBsW2XQbzfXFsRv51Lac6Ckx5nyqf9cUmFr1fuAEHGXmpq8oPNMqCpH1jTdwP3s5SD644R8KK4cVytk9Jxcxcb7JsfNxcGNRbG5q4pq"
         BIFROST_BITCOIN_RPC_SERVER: "stellar-bitcoin:18332"
@@ -41,7 +37,3 @@ services:
         BIFROST_DB_DSN: "postgres://bifrost:password@database/bifrostdb?sslmode=disable"
       ports:
         - "8800:8800/tcp"
-
-networks:
-  backend:
-    driver: bridge
