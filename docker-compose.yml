@@ -19,7 +19,7 @@ services:
       restart: unless-stopped
       environment:
         MASTER_PUBLIC_KEY: "xpub6C79eBsW2XQbzfXFsRv51Lac6Ckx5nyqf9cUmFr1fuAEHGXmpq8oPNMqCpH1jTdwP3s5SD644R8KK4cVytk9Jxcxcb7JsfNxcGNRbG5q4pq"
-        BIFROST_BITCOIN_RPC_SERVER: "stellarbitcoin_default:18332"
+        BIFROST_BITCOIN_RPC_SERVER: "stellarbitcoin:18332"
         RPC_USER: "user"
         RPC_PASS: "password"
         TESTNET: "true"
