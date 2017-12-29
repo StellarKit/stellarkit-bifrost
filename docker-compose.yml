@@ -10,6 +10,9 @@ services:
         POSTGRES_USER: bifrost
         POSTGRES_PASSWORD: password
         POSTGRES_DB: bifrostdb
+      networks:
+          - stellarbitcoin_default
+          - default
 
   bifrost:
       image: sgehrman/stellar-bifrost
@@ -37,8 +40,10 @@ services:
         BIFROST_DB_DSN: "postgres://bifrost:password@database/bifrostdb?sslmode=disable"
       ports:
         - "8800:8800"
+      networks:
+          - stellarbitcoin_default
+          - default
 
 networks:
-  default:
+  stellarbitcoin_default:
     external: true
-    name: "stellarbitcoin_default"
