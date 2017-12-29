@@ -35,11 +35,14 @@ services:
         NETWORK_PASSPHRASE: "Test SDF Network ; September 2015"
         BIFROST_DB_TYPE: "postgres"
         BIFROST_DB_DSN: "postgres://bifrost:password@database/bifrostdb?sslmode=disable"
-      networks:
-        - stellarbitcoin_default
       ports:
         - "8800:8800"
 
 networks:
-  stellarbitcoin_default:
+  default:
+    external: true
+    name: stellarbitcoin_default
+  stellar-node_default:
+    external: true
+  stellar-ethereum_default:
     external: true
