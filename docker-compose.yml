@@ -39,3 +39,7 @@ services:
         - stellarbitcoin_default
       ports:
         - "8800:8800"
+
+networks:
+  stellarbitcoin_default:
+    external: true
