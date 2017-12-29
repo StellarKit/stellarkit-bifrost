@@ -13,7 +13,7 @@ services:
       networks:
           - stellarbitcoin_default
           - stellarethereum_default
-          - stellarnode_default
+          - stellarcorehorizon_default
           - default
 
   bifrost:
@@ -45,7 +45,7 @@ services:
       networks:
           - stellarbitcoin_default
           - stellarethereum_default
-          - stellarnode_default
+          - stellarcorehorizon_default
           - default
 
 networks:
@@ -53,5 +53,5 @@ networks:
     external: true
   stellarethereum_default:
     external: true
-  stellarnode_default:
+  stellarcorehorizon_default:
     external: true
