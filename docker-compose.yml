@@ -12,6 +12,8 @@ services:
         POSTGRES_DB: bifrostdb
       networks:
           - stellarbitcoin_default
+          - stellarethereum_default
+          - stellarnode_default
           - default
 
   bifrost:
@@ -27,14 +29,14 @@ services:
         RPC_PASS: "password"
         TESTNET: "true"
         MINIMUM_VALUE_BTC:  "0.00001"
-        BIFROST_ETHEREUM_RPC_SERVER: "stellar-ethereum:8545"
+        BIFROST_ETHEREUM_RPC_SERVER: "ethereum:8545"
         NETWORK_ID: "3"
         MINIMUM_VALUE_ETH: "0.00001"
         BIFROST_STELLAR_ISSUER_PUBLIC_KEY: "GD5H2WSHTWVTZI5BR3V5XTRBCFDMEOKFMXR4Y4PU337K7WS55UAADI5T"
         BIFROST_STELLAR_SIGNER_SECRET_KEY: "SD4DFZ433RUGNCMCG4JGWK47R5KOHQOS4T5LXGLGBLY7ZLBUZQTTONVQ"
         TOKEN_ASSET_CODE: "LMB"
         NEEDS_AUTHORIZE: "true"
-        BIFROST_STELLAR_HORIZON: "stellar-node:8000"
+        BIFROST_STELLAR_HORIZON: "stellar_core:8000"
         NETWORK_PASSPHRASE: "Test SDF Network ; September 2015"
         BIFROST_DB_TYPE: "postgres"
         BIFROST_DB_DSN: "postgres://bifrost:password@database/bifrostdb?sslmode=disable"
@@ -42,8 +44,14 @@ services:
         - "8800:8800"
       networks:
           - stellarbitcoin_default
+          - stellarethereum_default
+          - stellarnode_default
           - default
 
 networks:
   stellarbitcoin_default:
+    external: true
+  stellarethereum_default:
+    external: true
+  stellarnode_default:
     external: true
