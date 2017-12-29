@@ -36,7 +36,7 @@ services:
         BIFROST_STELLAR_SIGNER_SECRET_KEY: "SD4DFZ433RUGNCMCG4JGWK47R5KOHQOS4T5LXGLGBLY7ZLBUZQTTONVQ"
         TOKEN_ASSET_CODE: "LMB"
         NEEDS_AUTHORIZE: "true"
-        BIFROST_STELLAR_HORIZON: "https://stellarcore:8000"
+        BIFROST_STELLAR_HORIZON: "http://stellarcore:8000"
         NETWORK_PASSPHRASE: "Test SDF Network ; September 2015"
         BIFROST_DB_TYPE: "postgres"
         BIFROST_DB_DSN: "postgres://bifrost:password@database/bifrostdb?sslmode=disable"
