@@ -18,6 +18,7 @@ func main()  {
 	}
 
 	dumpFile := os.Getenv("DB_DUMP_FILE")
+  log.Fatal(dumpFile)
 	file, err := ioutil.ReadFile(dumpFile)
 	if err != nil {
 		log.Fatal(fmt.Sprintf("Cannot open sql-dump: `%s`", dumpFile))
