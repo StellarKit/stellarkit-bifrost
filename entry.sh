@@ -3,10 +3,11 @@
 set -e
 
 function main() {
-  while ! psql -U bifrost -c 'select 1' bifrostdb &> /dev/null ; do
-    echo "Waiting for bifrost postgres to be available..."
-    sleep 1
-  done
+  # while ! psql -U bifrost -c 'select 1' bifrostdb &> /dev/null ; do
+  #   echo "Waiting for bifrost postgres to be available..."
+  #   sleep 1
+  # done
+  sleep 1
 
   init_bifrost_db
   start_bifrost
