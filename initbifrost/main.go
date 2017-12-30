@@ -18,11 +18,14 @@ func main()  {
 	}
 
 	dumpFile := os.Getenv("DB_DUMP_FILE")
-  log.Fatal(dumpFile)
+  log.Print(dumpFile)
 	file, err := ioutil.ReadFile(dumpFile)
 	if err != nil {
-		log.Fatal(fmt.Sprintf("Cannot open sql-dump: `%s`", dumpFile))
-	}
+    log.Print(err)
+    log.Fatal(fmt.Sprintf("Cannot open sql-dump: `%s`", dumpFile))
+	} else {
+    log.Print(fmt.Sprintf("Dump file OK: `%s`", dumpFile))
+  }
 
 	requests := strings.Split(string(file), ";")
 
