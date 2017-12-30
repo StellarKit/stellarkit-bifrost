@@ -22,6 +22,9 @@ function init_bifrost_db() {
   echo "Bifrost DB: Initializing"
   DB_URL=$BIFROST_DB_DSN
   DB_DUMP_FILE=/go/src/github.com/stellar/go/services/bifrost/database/migrations/01_init.sql
+
+  echo $DB_DUMP_FILE
+
   /go/bin/initbifrost
 
   # not sure if needed, is this async?
