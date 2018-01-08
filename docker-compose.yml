@@ -1,15 +1,15 @@
-version: "3"
+version:                                    "3"
 services:
   database:
-      image: postgres
-      container_name: postgres-bifrost
-      restart: unless-stopped
+      image:                                postgres
+      container_name:                       postgres-bifrost
+      restart:                              unless-stopped
       volumes:
         - ~/bifrost-testnet/postgresql:/var/lib/postgresql/data
       environment:
-        POSTGRES_USER: bifrost
-        POSTGRES_PASSWORD: password
-        POSTGRES_DB: bifrostdb
+        POSTGRES_USER:                      bifrost
+        POSTGRES_PASSWORD:                  password
+        POSTGRES_DB:                        bifrostdb
       networks:
           - stellarbitcoin_default
           - stellarethereum_default
@@ -17,31 +17,31 @@ services:
           - default
 
   bifrost:
-      image: sgehrman/stellar-bifrost
-      container_name: stellar-bifrost
+      image:                                sgehrman/stellar-bifrost
+      container_name:                       stellar-bifrost
       volumes:
         - ~/bifrost-testnet:/opt/bifrost
-      restart: unless-stopped
+      restart:                              unless-stopped
       depends_on:
         - database
       environment:
-        MASTER_PUBLIC_KEY: "xpub6C79eBsW2XQbzfXFsRv51Lac6Ckx5nyqf9cUmFr1fuAEHGXmpq8oPNMqCpH1jTdwP3s5SD644R8KK4cVytk9Jxcxcb7JsfNxcGNRbG5q4pq"
-        BIFROST_BITCOIN_RPC_SERVER: "bitcoind:18332"
-        RPC_USER: "user"
-        RPC_PASS: "password"
-        TESTNET: "true"
-        MINIMUM_VALUE_BTC:  "0.00001"
-        BIFROST_ETHEREUM_RPC_SERVER: "ethereum:8545"
-        NETWORK_ID: "4"
-        MINIMUM_VALUE_ETH: "0.00001"
-        BIFROST_STELLAR_ISSUER_PUBLIC_KEY: "GBAI66I4B7IX7NGK2BUBUQK2WUH4SKXTGUNAHCZ6X35TA2ORD4SIPQ3D"
-        BIFROST_STELLAR_SIGNER_SECRET_KEY: "SA3M2742T7ROMBNHNY5Y4A6ARK5RWGTI2C6Y3NTLYDX7YP7ZHB4GBGD4"
-        TOKEN_ASSET_CODE: "LMB"
-        NEEDS_AUTHORIZE: "true"
-        BIFROST_STELLAR_HORIZON: "http://stellarcore:8000" # "https://horizon-testnet.stellar.org"
-        NETWORK_PASSPHRASE: "Test SDF Network ; September 2015"
-        BIFROST_DB_TYPE: "postgres"
-        BIFROST_DB_DSN: "postgres://bifrost:password@database/bifrostdb?sslmode=disable"
+        MASTER_PUBLIC_KEY:                  "xpub6C79eBsW2XQbzfXFsRv51Lac6Ckx5nyqf9cUmFr1fuAEHGXmpq8oPNMqCpH1jTdwP3s5SD644R8KK4cVytk9Jxcxcb7JsfNxcGNRbG5q4pq"
+        BIFROST_BITCOIN_RPC_SERVER:         "bitcoind:18332"
+        RPC_USER:                           "user"
+        RPC_PASS:                           "password"
+        TESTNET:                            "true"
+        MINIMUM_VALUE_BTC:                  "0.00001"
+        BIFROST_ETHEREUM_RPC_SERVER:        "ethereum:8545"
+        NETWORK_ID:                         "4"
+        MINIMUM_VALUE_ETH:                  "0.00001"
+        BIFROST_STELLAR_ISSUER_PUBLIC_KEY:  "GBAI66I4B7IX7NGK2BUBUQK2WUH4SKXTGUNAHCZ6X35TA2ORD4SIPQ3D"
+        BIFROST_STELLAR_SIGNER_SECRET_KEY:  "SA3M2742T7ROMBNHNY5Y4A6ARK5RWGTI2C6Y3NTLYDX7YP7ZHB4GBGD4"
+        TOKEN_ASSET_CODE:                   "LMB"
+        NEEDS_AUTHORIZE:                    "true"
+        BIFROST_STELLAR_HORIZON:            "http://stellarhorizon:8000" # "https://horizon-testnet.stellar.org"
+        NETWORK_PASSPHRASE:                 "Test SDF Network ; September 2015"
+        BIFROST_DB_TYPE:                    "postgres"
+        BIFROST_DB_DSN:                     "postgres://bifrost:password@database/bifrostdb?sslmode=disable"
       ports:
         - "8800:8800"
       networks:
@@ -52,8 +52,8 @@ services:
 
 networks:
   stellarbitcoin_default:
-    external: true
+    external:                               true
   stellarethereum_default:
-    external: true
+    external:                               true
   stellarcorehorizon_default:
-    external: true
+    external:                               true
