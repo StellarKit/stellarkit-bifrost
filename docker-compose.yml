@@ -17,7 +17,7 @@ services:
           - default
 
   bifrost:
-      image:                                sgehrman/stellar-bifrost
+      build:                                ./bifrost-docker
       container_name:                       stellar-bifrost
       volumes:
         - ~/bifrost-testnet:/opt/bifrost
