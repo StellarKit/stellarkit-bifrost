@@ -5,7 +5,7 @@ services:
       container_name:                       postgres-bifrost
       restart:                              unless-stopped
       volumes:
-        - ~/bifrost-testnet/postgresql:/var/lib/postgresql/data
+        - ~/stellar/bifrost/postgresql:/var/lib/postgresql/data
       environment:
         POSTGRES_USER:                      bifrost
         POSTGRES_PASSWORD:                  password
@@ -20,7 +20,7 @@ services:
       build:                                ./bifrost-docker
       container_name:                       stellar-bifrost
       volumes:
-        - ~/bifrost-testnet:/opt/bifrost
+        - ~/stellar/bifrost:/opt/bifrost
       restart:                              unless-stopped
       depends_on:
         - database
