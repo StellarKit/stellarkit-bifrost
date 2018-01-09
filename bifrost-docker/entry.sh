@@ -3,11 +3,10 @@
 set -e
 
 function main() {
-  # while ! psql -U bifrost -c 'select 1' bifrostdb &> /dev/null ; do
-  #   echo "Waiting for bifrost postgres to be available..."
-  #   sleep 1
-  # done
-  sleep 1
+  while ! psql -h bifrostpostgres -U bifrost -c 'select 1' bifrostdb &> /dev/null ; do
+    echo "Waiting for bifrostdb to be available..."
+    sleep 1
+  done
 
   init_bifrost_db
   start_bifrost
@@ -21,9 +20,6 @@ function init_bifrost_db() {
 
   echo "Bifrost DB: Initializing"
   DB_URL=$BIFROST_DB_DSN DB_DUMP_FILE=/go/src/github.com/stellar/go/services/bifrost/database/migrations/01_init.sql /go/bin/initbifrost
-
-  # not sure if needed, is this async?
-  sleep 1
 
 	touch /opt/bifrost/.bifrostdb-initialized
  }

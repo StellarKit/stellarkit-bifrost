@@ -1,6 +1,6 @@
 version:                                    "3"
 services:
-  database:
+  bifrostpostgres:
       image:                                postgres
       container_name:                       postgres-bifrost
       restart:                              unless-stopped
@@ -23,7 +23,7 @@ services:
         - ~/stellar/bifrost:/opt/bifrost
       restart:                              unless-stopped
       depends_on:
-        - database
+        - bifrostpostgres
       environment:
         MASTER_PUBLIC_KEY:                  "xpub6C79eBsW2XQbzfXFsRv51Lac6Ckx5nyqf9cUmFr1fuAEHGXmpq8oPNMqCpH1jTdwP3s5SD644R8KK4cVytk9Jxcxcb7JsfNxcGNRbG5q4pq"
         BIFROST_BITCOIN_RPC_SERVER:         "bitcoind:18332"
@@ -41,7 +41,7 @@ services:
         BIFROST_STELLAR_HORIZON:            "http://stellarhorizon:8000" # "https://horizon-testnet.stellar.org"
         NETWORK_PASSPHRASE:                 "Test SDF Network ; September 2015"
         BIFROST_DB_TYPE:                    "postgres"
-        BIFROST_DB_DSN:                     "postgres://bifrost:password@database/bifrostdb?sslmode=disable"
+        BIFROST_DB_DSN:                     "postgres://bifrost:password@bifrostpostgres/bifrostdb?sslmode=disable"
       ports:
         - "8800:8800"
       networks:
