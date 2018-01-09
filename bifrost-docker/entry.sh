@@ -1,4 +1,4 @@
-#!/usr/bin/env sh
+#!/bin/sh
 
 set -e
 
@@ -13,16 +13,16 @@ function main() {
 }
 
 function init_bifrost_db() {
-	if [ -f /opt/bifrost/.bifrostdb-initialized ]; then
-		echo "Bifrost DB: already initialized"
-		return 0
-	fi
+  if [ -f /opt/bifrost/.bifrostdb-initialized ]; then
+    echo "Bifrost DB: already initialized"
+    return 0
+  fi
 
   echo "Bifrost DB: Initializing"
   DB_URL=$BIFROST_DB_DSN DB_DUMP_FILE=/go/src/github.com/stellar/go/services/bifrost/database/migrations/01_init.sql /go/bin/initbifrost
 
-	touch /opt/bifrost/.bifrostdb-initialized
- }
+  touch /opt/bifrost/.bifrostdb-initialized
+}
 
 function start_bifrost() {
   build-config /config.toml > /opt/bifrost/bifrost.cfg
