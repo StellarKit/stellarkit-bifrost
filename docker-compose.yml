@@ -39,7 +39,7 @@ services:
         BIFROST_STELLAR_ISSUER_PUBLIC_KEY:  "GBIZTPJLYX7XQBDJB6OKD4MF6AFNZDLJEUL4TMR5FBT6OLXMKJHFPCZQ"
         BIFROST_STELLAR_SIGNER_SECRET_KEY:  "SA3M2742T7ROMBNHNY5Y4A6ARK5RWGTI2C6Y3NTLYDX7YP7ZHB4GBGD4"
         TOKEN_ASSET_CODE:                   "LMB"
-        NEEDS_AUTHORIZE:                    "true"
+        NEEDS_AUTHORIZE:                    "false"
         BIFROST_STELLAR_HORIZON:            "http://stellarhorizon:8000"
         NETWORK_PASSPHRASE:                 "Test SDF Network ; September 2015"
         BIFROST_DB_TYPE:                    "postgres"
