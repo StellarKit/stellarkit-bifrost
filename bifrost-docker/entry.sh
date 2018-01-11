@@ -8,7 +8,8 @@ function main() {
   build-config /configs/pgpass-config > /root/.pgpass
   chmod 600 /root/.pgpass
 
-  while ! psql -h bifrostpostgres -U bifrost -c 'select 1' bifrostdb &> /dev/null ; do
+  while ! psql -h bifrostpostgres -U stellar -c 'select 1' bifrostdb &> /dev/null
+  do
     echo "Waiting for bifrostdb to be available..."
     sleep 1
   done
@@ -18,7 +19,8 @@ function main() {
 }
 
 function init_bifrost_db() {
-  if [ -f /opt/bifrost/.bifrostdb-initialized ]; then
+  if [ -f /opt/bifrost/.bifrostdb-initialized ]
+  then
     echo "Bifrost DB: already initialized"
     return 0
   fi
