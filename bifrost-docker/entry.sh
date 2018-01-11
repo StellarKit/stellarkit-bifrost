@@ -3,6 +3,11 @@
 set -e
 
 function main() {
+  build-config /configs/config.toml > /opt/bifrost/bifrost.cfg
+
+  build-config /configs/pgpass-config > /root/.pgpass
+  chmod 600 /root/.pgpass
+
   while ! psql -h bifrostpostgres -U bifrost -c 'select 1' bifrostdb &> /dev/null ; do
     echo "Waiting for bifrostdb to be available..."
     sleep 1
@@ -25,8 +30,6 @@ function init_bifrost_db() {
 }
 
 function start_bifrost() {
-  build-config /config.toml > /opt/bifrost/bifrost.cfg
-
   /go/bin/bifrost server -c /opt/bifrost/bifrost.cfg
 }
 

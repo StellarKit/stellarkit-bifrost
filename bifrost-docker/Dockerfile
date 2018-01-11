@@ -26,7 +26,6 @@ COPY --from=builder /go/src/github.com/stellar/go/services/bifrost/database/migr
 
 ADD build-config /usr/bin/build-config
 RUN chmod +x /usr/bin/build-config
-ADD config.toml /config.toml
 
 RUN ["mkdir", "-p", "/opt/bifrost"]
 
@@ -36,6 +35,8 @@ RUN chmod +x /entry.sh
 ADD apk-server /apk-server
 RUN chmod +x /apk-server
 RUN /apk-server
+
+ADD configs /configs
 
 ENTRYPOINT ["/entry.sh"]
 
