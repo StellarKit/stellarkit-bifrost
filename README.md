@@ -18,3 +18,9 @@ MASTER_PUBLIC_KEY, BIFROST_STELLAR_ISSUER_PUBLIC_KEY, BIFROST_STELLAR_SIGNER_SEC
 Edit docker-compose.yml for mainnet
 
 Pull requests welcome!
+
+### Donations
+If you like this code, a donation would be appreciated:
+```
+GCYQSB3UQDSISB5LKAL2OEVLAYJNIR7LFVYDNKRMLWQKDCBX4PU3Z6JP
+```
