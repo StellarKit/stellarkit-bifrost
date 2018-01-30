@@ -18,6 +18,7 @@ RUN mkdir -p /go/src/github.com/stellar/ \
         && go install github.com/stellar/initbifrost
 
 
+# -----------------------
 FROM alpine:latest
 
 COPY --from=builder /go/bin/bifrost /go/bin/bifrost
