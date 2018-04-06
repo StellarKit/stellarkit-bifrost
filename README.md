@@ -1,4 +1,4 @@
-## Stellar Bifrost
+## StellarKit Bifrost
 
 ### The simplest and cleanest Docker image for running bifrost
 
@@ -27,6 +27,8 @@ NETWORK_ID defaults to Rinkeby testnet (4)
 1 = live Ethereum network)
 
 Pull requests welcome!
+
+Disclaimer: We not affiliated with, or sponsored or endorsed by, the Stellar Development Foundation.
 
 ### Donations
 
