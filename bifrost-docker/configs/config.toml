@@ -1,6 +1,6 @@
 port = 8800
 using_proxy = false
-access-control-allow-origin-header = "*"
+access_control_allow_origin_header = "*"
 
 [bitcoin]
 master_public_key = "${MASTER_PUBLIC_KEY}"
@@ -9,20 +9,24 @@ rpc_user = "${RPC_USER}"
 rpc_pass = "${RPC_PASS}"
 testnet = ${TESTNET}
 minimum_value_btc = "${MINIMUM_VALUE_BTC}"
+token_price = "${TOKEN_PRICE_BTC}"
 
 [ethereum]
 master_public_key = "${MASTER_PUBLIC_KEY}"
 rpc_server = "${BIFROST_ETHEREUM_RPC_SERVER}"
 network_id = "${NETWORK_ID}"
 minimum_value_eth = "${MINIMUM_VALUE_ETH}"
+token_price = "${TOKEN_PRICE_ETH}"
 
 [stellar]
 issuer_public_key = "${BIFROST_STELLAR_ISSUER_PUBLIC_KEY}"
+distribution_public_key = "GDGVTKSEXWB4VFTBDWCBJVJZLIY6R3766EHBZFIGK2N7EQHVV5UTA63C"
 signer_secret_key = "${BIFROST_STELLAR_SIGNER_SECRET_KEY}"
 token_asset_code = "${TOKEN_ASSET_CODE}"
 needs_authorize = ${NEEDS_AUTHORIZE}
 horizon = "${BIFROST_STELLAR_HORIZON}"
 network_passphrase = "${NETWORK_PASSPHRASE}"
+starting_balance = "${STARTING_BALANCE}"
 
 [database]
 type = "${BIFROST_DB_TYPE}"
