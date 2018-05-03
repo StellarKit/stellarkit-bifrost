@@ -43,7 +43,7 @@ services:
         STELLAR_SIGNER_SECRET_KEY:       "SCY7CDJOOIRANODZTXCU6EH5T7O2AKKQB3JKPKWCQIWS2N3P6UNBVWEB"
         TOKEN_ASSET_CODE:                "HAIRBALZ"
         NEEDS_AUTHORIZE:                 "false"
-        STELLAR_HORIZON:                 "https://stellarkit.io:8000"
+        STELLAR_HORIZON:                 "http://stellarhorizon:8000"
         NETWORK_PASSPHRASE:              "Test SDF Network ; September 2015"
         STARTING_BALANCE:                "2"
         BIFROST_DB_TYPE:                 "postgres"
