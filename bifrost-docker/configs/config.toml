@@ -19,12 +19,12 @@ minimum_value_eth = "${MINIMUM_VALUE_ETH}"
 token_price = "${TOKEN_PRICE_ETH}"
 
 [stellar]
-issuer_public_key = "${BIFROST_STELLAR_ISSUER_PUBLIC_KEY}"
-distribution_public_key = "GDGVTKSEXWB4VFTBDWCBJVJZLIY6R3766EHBZFIGK2N7EQHVV5UTA63C"
-signer_secret_key = "${BIFROST_STELLAR_SIGNER_SECRET_KEY}"
+issuer_public_key = "${STELLAR_ISSUER_PUBLIC_KEY}"
+distribution_public_key = "STELLAR_DISTRIBUTION_PUBLIC_KEY"
+signer_secret_key = "${STELLAR_SIGNER_SECRET_KEY}"
 token_asset_code = "${TOKEN_ASSET_CODE}"
 needs_authorize = ${NEEDS_AUTHORIZE}
-horizon = "${BIFROST_STELLAR_HORIZON}"
+horizon = "${STELLAR_HORIZON}"
 network_passphrase = "${NETWORK_PASSPHRASE}"
 starting_balance = "${STARTING_BALANCE}"
 

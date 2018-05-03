@@ -1,15 +1,15 @@
-version:                                   "3"
+version:                                 "3"
 services:
   bifrostpostgres:
-      image:                               postgres
-      container_name:                      postgres-bifrost
-      restart:                             unless-stopped
+      image:                             postgres
+      container_name:                    postgres-bifrost
+      restart:                           unless-stopped
       volumes:
         - ~/stellar/bifrost/postgresql:/var/lib/postgresql/data
       environment:
-        POSTGRES_USER:                     stellar
-        POSTGRES_PASSWORD:                 password
-        POSTGRES_DB:                       bifrostdb
+        POSTGRES_USER:                   stellar
+        POSTGRES_PASSWORD:               password
+        POSTGRES_DB:                     bifrostdb
       networks:
           - stellarbitcoin_default
           - stellarethereum_default
@@ -17,36 +17,37 @@ services:
           - default
 
   bifrost:
-      build:                               ./bifrost-docker
-      container_name:                      stellar-bifrost
+      build:                             ./bifrost-docker
+      container_name:                    stellar-bifrost
       volumes:
         - ~/stellar/bifrost:/opt/bifrost
-      restart:                             unless-stopped
+      restart:                           unless-stopped
       depends_on:
         - bifrostpostgres
       environment:
-        POSTGRES_USER:                     stellar
-        POSTGRES_PASSWORD:                 password
-        MASTER_PUBLIC_KEY:                 "xpub6C79eBsW2XQbzfXFsRv51Lac6Ckx5nyqf9cUmFr1fuAEHGXmpq8oPNMqCpH1jTdwP3s5SD644R8KK4cVytk9Jxcxcb7JsfNxcGNRbG5q4pq"
-        BIFROST_BITCOIN_RPC_SERVER:        "bitcoind:18332"
-        RPC_USER:                          "user"
-        RPC_PASS:                          "password"
-        TESTNET:                           "true"
-        MINIMUM_VALUE_BTC:                 "0.00001"
-        TOKEN_PRICE_BTC:                   "1"
-        BIFROST_ETHEREUM_RPC_SERVER:       "ethereum:8545"
-        NETWORK_ID:                        "4"
-        MINIMUM_VALUE_ETH:                 "0.00001"
-        TOKEN_PRICE_ETH:                   "1"
-        BIFROST_STELLAR_ISSUER_PUBLIC_KEY: "GBVTKKTTDEMJN4QZQXREQMUFVYJX6OTHIGS7P4R3NJGI3I3XVXFXSR3F"
-        BIFROST_STELLAR_SIGNER_SECRET_KEY: "SAR6ER2FZRL6WP5BQULZK7O6WR5TCTAMTZMC25AU24GZXNYPXFNNJNHO"
-        TOKEN_ASSET_CODE:                  "LMB"
-        NEEDS_AUTHORIZE:                   "false"
-        BIFROST_STELLAR_HORIZON:           "https://stellarkit.io:8000"
-        NETWORK_PASSPHRASE:                "Test SDF Network ; September 2015"
-        STARTING_BALANCE:                  "2"
-        BIFROST_DB_TYPE:                   "postgres"
-        BIFROST_DB_DSN:                    "postgres://stellar:password@bifrostpostgres/bifrostdb?sslmode=disable"
+        POSTGRES_USER:                   stellar
+        POSTGRES_PASSWORD:               password
+        MASTER_PUBLIC_KEY:               "xpub6C79eBsW2XQbzfXFsRv51Lac6Ckx5nyqf9cUmFr1fuAEHGXmpq8oPNMqCpH1jTdwP3s5SD644R8KK4cVytk9Jxcxcb7JsfNxcGNRbG5q4pq"
+        BIFROST_BITCOIN_RPC_SERVER:      "bitcoind:18332"
+        RPC_USER:                        "user"
+        RPC_PASS:                        "password"
+        TESTNET:                         "true"
+        MINIMUM_VALUE_BTC:               "0.00001"
+        TOKEN_PRICE_BTC:                 "1"
+        BIFROST_ETHEREUM_RPC_SERVER:     "ethereum:8545"
+        NETWORK_ID:                      "4"
+        MINIMUM_VALUE_ETH:               "0.00001"
+        TOKEN_PRICE_ETH:                 "1"
+        STELLAR_ISSUER_PUBLIC_KEY:       "GBQHULAULHXRRX2RSHWJ2RXHF5PDNIGI7VTF4L5HOUSNBV5UB2VW3XHL"
+        STELLAR_DISTRIBUTION_PUBLIC_KEY: "GBCAMYZILWC2MOG7M3L2SIRBPNENUAHR5SPCUJ5DRQ5ZF73PF23ZQGSE"
+        STELLAR_SIGNER_SECRET_KEY:       "SCY7CDJOOIRANODZTXCU6EH5T7O2AKKQB3JKPKWCQIWS2N3P6UNBVWEB"
+        TOKEN_ASSET_CODE:                "HAIRBALZ"
+        NEEDS_AUTHORIZE:                 "false"
+        STELLAR_HORIZON:                 "https://stellarkit.io:8000"
+        NETWORK_PASSPHRASE:              "Test SDF Network ; September 2015"
+        STARTING_BALANCE:                "2"
+        BIFROST_DB_TYPE:                 "postgres"
+        BIFROST_DB_DSN:                  "postgres://stellar:password@bifrostpostgres/bifrostdb?sslmode=disable"
       ports:
         - "8800:8800"
       networks:
@@ -57,8 +58,8 @@ services:
 
 networks:
   stellarbitcoin_default:
-    external:                              true
+    external:                            true
   stellarethereum_default:
-    external:                              true
+    external:                            true
   stellarcorehorizon_default:
-    external:                              true
+    external:                            true
