@@ -20,7 +20,7 @@ token_price = "${TOKEN_PRICE_ETH}"
 
 [stellar]
 issuer_public_key = "${STELLAR_ISSUER_PUBLIC_KEY}"
-distribution_public_key = "STELLAR_DISTRIBUTION_PUBLIC_KEY"
+distribution_public_key = "${STELLAR_DISTRIBUTION_PUBLIC_KEY}"
 signer_secret_key = "${STELLAR_SIGNER_SECRET_KEY}"
 token_asset_code = "${TOKEN_ASSET_CODE}"
 needs_authorize = ${NEEDS_AUTHORIZE}
