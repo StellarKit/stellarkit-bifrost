@@ -42,7 +42,7 @@ services:
         BIFROST_STELLAR_SIGNER_SECRET_KEY: "SAR6ER2FZRL6WP5BQULZK7O6WR5TCTAMTZMC25AU24GZXNYPXFNNJNHO"
         TOKEN_ASSET_CODE:                  "LMB"
         NEEDS_AUTHORIZE:                   "false"
-        BIFROST_STELLAR_HORIZON:           "https://stellarhorizon:8000"
+        BIFROST_STELLAR_HORIZON:           "https://stellarkit.io:8000"
         NETWORK_PASSPHRASE:                "Test SDF Network ; September 2015"
         STARTING_BALANCE:                  "2"
         BIFROST_DB_TYPE:                   "postgres"
