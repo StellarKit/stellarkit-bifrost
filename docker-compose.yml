@@ -45,7 +45,7 @@ services:
         NEEDS_AUTHORIZE:                 "false"
         STELLAR_HORIZON:                 "http://stellarhorizon:8000"
         NETWORK_PASSPHRASE:              "Test SDF Network ; September 2015"
-        STARTING_BALANCE:                "2.5"
+        STARTING_BALANCE:                "4"
         BIFROST_DB_TYPE:                 "postgres"
         BIFROST_DB_DSN:                  "postgres://stellar:password@bifrostpostgres/bifrostdb?sslmode=disable"
       ports:
