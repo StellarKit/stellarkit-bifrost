@@ -18,7 +18,7 @@ function main() {
 }
 
 function start_bifrost() {
-  /go/bin/bifrost server --debug -c /opt/bifrost/bifrost.cfg
+  /go/bin/bifrost server -c /opt/bifrost/bifrost.cfg
 }
 
 main
